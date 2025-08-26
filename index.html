@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>랜덤 음식 골라주기</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>오늘 뭐 먹지? <span class="sub">간단 음식 랜덤 픽커</span></h1>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="inputs" id="inputs"></div>
+        <div class="toolbar">
+          <button class="btn-add" id="addBtn" type="button" aria-label="음식 입력칸 추가">➕ 입력칸 추가</button>
+          <button class="btn-pick" id="pickBtn" type="button" aria-label="랜덤으로 하나 고르기">🎲 고르기</button>
+          <button class="btn-clear" id="clearBtn" type="button" aria-label="모든 입력칸 비우기">🧹 비우기</button>
+          <button class="btn-settings" id="openSettings" type="button" aria-label="음식 목록 편집">⚙️ 목록 편집</button>
+        </div>
+
+        <div class="result" aria-live="polite" id="result">
+          <span class="hint">입력칸을 추가하고 <b>고르기</b>를 눌러주세요.</span>
+        </div>
+
+        <details class="settings" id="settings">
+          <summary>🍽️ 음식 목록 편집 (한 줄에 하나씩)</summary>
+          <div class="settings-body">
+            <textarea id="foodsEditor" spellcheck="false"></textarea>
+            <div class="settings-actions">
+              <button class="btn-pick" id="applyFoods" type="button">적용 & 저장</button>
+              <button class="btn-clear" id="resetFoods" type="button">기본값으로 초기화</button>
+            </div>
+            <p class="hint">저장된 목록은 브라우저에만 보관돼요(LocalStorage). 다른 기기에서는 다시 설정해야 해요.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="footer">© 2025 Random Food Picker • html + css + js only: <a href="https://github.com/minchoCoin/random-food-picker" style="color:#a6adbb">GitHub Repository</a></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+:root{
+  --bg:#0b0c10; --panel:#111317; --panel-2:#151821; --text:#e6e6e6; --muted:#a6adbb;
+  --accent:#4cc9f0; --accent-2:#22c55e; --danger:#ef4444; --ring:#334155;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Pretendard,Apple SD Gothic Neo,Noto Sans KR,Helvetica,Arial,sans-serif;
+  color:var(--text); background: radial-gradient(1200px 800px at 10% -10%, #132033 0%, transparent 60%),
+            radial-gradient(800px 600px at 90% 10%, #1b2b3f 0%, transparent 55%), var(--bg);
+}
+.container{max-width:860px; margin:40px auto; padding:24px;}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter:saturate(140%) blur(8px);
+  border:1px solid #1f2937; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,.25);
+  overflow:hidden;
+}
+.header{padding:22px 24px; border-bottom:1px solid #1f2937; display:flex; align-items:center; gap:12px}
+.logo{width:36px; height:36px; border-radius:10px; background:conic-gradient(from 120deg, var(--accent), #a78bfa, #f472b6, var(--accent));}
+h1{font-size:20px; margin:0}
+.sub{color:var(--muted); font-size:13px}
+
+.section{padding:22px 24px}
+.inputs{display:flex; flex-direction:column; gap:10px}
+.row{display:grid; grid-template-columns:1fr auto auto; gap:10px; align-items:center}
+input.food{
+  width:100%; padding:14px 14px; font-size:16px; color:var(--text);
+  background:var(--panel-2); border:1px solid var(--ring); border-radius:12px;
+  outline:none; transition:.2s border-color, .2s box-shadow;
+}
+input.food:focus{border-color:var(--accent); box-shadow:0 0 0 4px rgba(76,201,240,0.15)}
+
+.toolbar{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap}
+button{
+  appearance:none; border:none; cursor:pointer; padding:12px 16px; border-radius:12px;
+  font-weight:600; font-size:15px; transition:transform .05s ease, box-shadow .2s ease, background .2s ease;
+}
+button:active{transform:translateY(1px)}
+.btn-add{background:linear-gradient(180deg,#1f2937,#10151e); color:#e5e7eb; border:1px solid #273244}
+.btn-add:hover{box-shadow:0 6px 20px rgba(76,201,240,.15)}
+.btn-pick{background:linear-gradient(180deg, #10b981, #059669); color:white;}
+.btn-pick:hover{box-shadow:0 8px 26px rgba(16,185,129,.35)}
+.btn-clear{background:linear-gradient(180deg,#2b2f3a,#191d26); color:#e5e7eb; border:1px solid #2b3444}
+.btn-clear:hover{box-shadow:0 6px 20px rgba(239,68,68,.15)}
+.btn-delete{background:linear-gradient(180deg,#3a1f1f,#261111); color:#fca5a5; border:1px solid #451515; padding:12px;}
+.btn-delete:hover{box-shadow:0 6px 20px rgba(239,68,68,.25)}
+.btn-settings{background:linear-gradient(180deg,#1f2937,#10151e); color:#e5e7eb; border:1px solid #273244}
+
+.result{
+  margin-top:18px; padding:18px; background:linear-gradient(180deg,#0f172a,#0b1222);
+  border:1px dashed #273244; border-radius:16px; min-height:64px; display:flex; align-items:center; justify-content:center; text-align:center
+}
+.picked{font-size:28px; font-weight:800; letter-spacing:.3px}
+.hint{font-size:13px; color:var(--muted)}
+
+.footer{padding:14px 24px; border-top:1px solid #1f2937; text-align:center; color:var(--muted); font-size:12px}
+
+.pop{animation:pop .35s ease}
+@keyframes pop{0%{transform:scale(.96); opacity:.5} 100%{transform:scale(1); opacity:1}}
+
+.shake{animation:shake .3s ease}
+@keyframes shake{0%{transform:translateX(0)}25%{transform:translateX(-3px)}50%{transform:translateX(3px)}75%{transform:translateX(-3px)}100%{transform:translateX(0)}}
+
+details.settings{margin-top:14px; border:1px solid #273244; border-radius:12px; background:#0d1320}
+details.settings>summary{cursor:pointer; padding:12px 14px; color:#cbd5e1; user-select:none}
+.settings-body{padding:14px}
+.settings-body textarea{width:100%; min-height:140px; resize:vertical; padding:12px; border-radius:10px; border:1px solid #273244; background:#0b1020; color:#e5e7eb}
+.settings-actions{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap}
+
+@media (max-width:540px){
+  .row{grid-template-columns:1fr auto auto}
+}
